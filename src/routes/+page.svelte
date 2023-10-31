@@ -1,14 +1,21 @@
+<script>
+    import Navigation from "../components/Navigation.svelte";
+    import Hamburger from "../components/Hamburger.svelte";
+
+    let isNavVisible = false;
+    function handleNavToggle() {
+        isNavVisible = !isNavVisible;
+    }
+</script>
+
 <main>
+
     <header>
         <div>
-            <a href="/">
-                <img src="/logo.svg" alt="Logo" />
-            </a>
-            <nav>
-                <a href="/">Home</a>
-                <a href="/about">About</a>
-                <a href="/contact">Contact</a>
-            </nav>    
+            <Hamburger on:toggle={handleNavToggle} />
+            {#if isNavVisible}
+                <Navigation visible={isNavVisible}/>
+            {/if}
         </div>
     </header>
-</main>  
+</main>
