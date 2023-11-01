@@ -10,12 +10,12 @@
 
 
 <button on:click={toggleNav} class="nav-toggle">
-    <span class="hamburger" ></span>
+    <span class="hamburger" />
 </button>
 
 <style>
     .nav-toggle {
-        z-index: 1;
+        z-index: 2;
         cursor: pointer;
         border: 0;
         width: 3em;
